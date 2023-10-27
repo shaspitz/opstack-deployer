@@ -123,9 +123,9 @@ json_data=$(cat <<EOF
     "finalSystemOwner": "$ADMIN_PUBLIC_ADDRESS",
     "portalGuardian": "$ADMIN_PUBLIC_ADDRESS",
     "l1StartingBlockTag": "$blockhash",
-    "l1ChainID": 5,
+    "l1ChainID": 11155111,
     "l2ChainID": $CHAIN_ID,
-    "l2BlockTime": 2,
+    "l2BlockTime": 1,
     "l1BlockTime": 12,
     "maxSequencerDrift": 600,
     "sequencerWindowSize": 3600,
@@ -160,8 +160,8 @@ json_data=$(cat <<EOF
     "gasPriceOracleScalar": 1000000,
 
     "enableGovernance": true,
-    "governanceTokenSymbol": "OP",
-    "governanceTokenName": "Optimism",
+    "governanceTokenSymbol": "PRIMEV",
+    "governanceTokenName": "PRIMEVSETTLE",
     "governanceTokenOwner": "$ADMIN_PUBLIC_ADDRESS",
 
     "l2GenesisBlockGasLimit": "0x1c9c380",
@@ -213,14 +213,14 @@ update_env_variable "DEPLOYMENT_CONTEXT" "$file_name_format"
 update_env_variable "PRIVATE_KEY" "$ADMIN_PRIVATE_KEY"
 update_env_variable "L1_RPC" "$ETH_RPC_URL"
 update_env_variable "RPC_KIND" "$RPC_KIND"
-update_env_variable "IMPL_SALT" "a"
+update_env_variable "IMPL_SALT" "primev-testnet-1"
 
 export ETH_RPC_URL=$ETH_RPC_URL
 export DEPLOYMENT_CONTEXT=$file_name_format
 export PRIVATE_KEY=$ADMIN_PRIVATE_KEY
 export L1_RPC=$ETH_RPC_URL
 export RPC_KIND=$RPC_KIND
-export IMPL_SALT="a"
+export IMPL_SALT="primev-testnet-1"
 
 source ~/.bashrc
 direnv allow .
